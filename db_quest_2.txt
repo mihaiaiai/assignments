@@ -1,4 +1,4 @@
-mysql> SELECT * FROM wizard WHERE birthday BETWEEN '1975-01-01' AND '1985-01-31';
+mysql> SELECT * FROM wizard WHERE birthday BETWEEN '1975-01-01' AND '1985-01-31' AND is_muggle=0;
 +----+-----------+----------+------------+-------------+---------------------------------------+-----------+
 | id | firstname | lastname | birthday   | birth_place | biography                             | is_muggle |
 +----+-----------+----------+------------+-------------+---------------------------------------+-----------+
@@ -9,9 +9,8 @@ mysql> SELECT * FROM wizard WHERE birthday BETWEEN '1975-01-01' AND '1985-01-31'
 |  6 | fred      | weasley  | 1978-04-01 |             |                                       |         0 |
 |  7 | george    | weasley  | 1978-04-01 |             |                                       |         0 |
 | 10 | drago     | malefoy  | 1980-06-05 |             |                                       |         0 |
-| 14 | dudley    | dursley  | 1980-06-23 |             | Cousin d'Harry                        |         1 |
 +----+-----------+----------+------------+-------------+---------------------------------------+-----------+
-8 rows in set (0.01 sec)
+7 rows in set (0.00 sec)
 
 mysql> SELECT firstname FROM wizard WHERE firstname LIKE 'H%';
 +-----------+
@@ -20,7 +19,7 @@ mysql> SELECT firstname FROM wizard WHERE firstname LIKE 'H%';
 | harry     |
 | hermione  |
 +-----------+
-2 rows in set (0.01 sec)
+2 rows in set (0.00 sec)
 
 mysql> SELECT firstname, lastname FROM wizard WHERE lastname='Potter' ORDER BY firstname;
 +-----------+----------+
